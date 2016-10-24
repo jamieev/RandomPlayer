@@ -34,8 +34,9 @@ public class Utils {
 		return 12*rand;
 	}
 	
+	
 	public static String randomDur() {
-		int rand = r.nextInt(7 +1);
+		int rand = r.nextInt(15 +1);
 		switch(rand) {
 		case 0 : return "w";
 		case 1 : return "h";
@@ -45,6 +46,15 @@ public class Utils {
 		case 5 : return "h.";
 		case 6 : return "q.";
 		case 7 : return "i.";
+		
+		case 8 : return "i riiiiiii";
+		case 9 : return "i riii ";
+		case 10 : return "i ri";
+		case 11 : return "i";
+		case 12 : return "i riiiiiiih";
+		case 13 : return "i riiiii";
+		case 14 : return "i rq";
+		case 15 : return "s ri";
 		default : return "wha?";
 		}
 	}
