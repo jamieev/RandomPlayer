@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Row implements Iterable<Integer> {
 
@@ -27,11 +28,9 @@ public class Row implements Iterable<Integer> {
 	}
 	
 	public String getPlayerString(int min, int max) {
-		Integer[] defTones = Arrays.copyOf(tones, 12);
 		StringBuffer sb = new StringBuffer();
-		for(int x = 0; x < defTones.length; x++) {
-			defTones[x] += Utils.randomOct(min, max);
-			sb.append(defTones[x] + Utils.randomDur() + " ");
+		for(int x = 0; x < tones.length; x++) {
+			sb.append(NOTE_NAMES[tones[x]] + ThreadLocalRandom.current().nextInt(min,max) + Utils.randomDur() + " ");
 		}
 		System.out.println(sb.toString());
 		return sb.toString();
